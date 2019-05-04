@@ -9,9 +9,8 @@ import java.util.ArrayList;
 
 public class MatrizCaracol {
     
-   public static void leerDocumento(BufferedReader doc, ArrayList<String> cadena, ArrayList<String> cadenaTemporal, char [] caracteres) throws FileNotFoundException, IOException{
-       
-       
+   public static void leerDocumento(BufferedReader doc, ArrayList<String> cadena)
+           throws FileNotFoundException, IOException{
        
                 while(true){
                     
@@ -25,30 +24,42 @@ public class MatrizCaracol {
                 }
                 
                 System.out.println(cadena);
-                System.out.println(cadena.toString().replace("[", "").replace("]", "").replace(" ", "").replace(",", ""));
-                System.out.println(reconstruccionString4(reconstruccionString3(reconstruccionString2(reconstruccionString(cadena.toString())))));
+                impresionCaracol(cadena.toString().replace("[", "")
+                        .replace("]", "").replace(" ", "").replace(",", "")
+                        , cadena.size());
                 
     }
    
-   public static String reconstruccionString(String s){
-       return s.replace("]","");
+   public static void impresionCaracol(String s, int tamaño){
+       
+       System.out.print(s.subSequence(0, tamaño));
+       System.out.print(s.charAt(9));
+       System.out.print(s.charAt(14));
+       System.out.print(s.charAt(19));
+       System.out.print(s.charAt(24));
+       System.out.print(s.charAt(23));
+       System.out.print(s.charAt(22));
+       System.out.print(s.charAt(21));
+       System.out.print(s.charAt(20));
+       System.out.print(s.charAt(15));
+       System.out.print(s.charAt(10));
+       System.out.print(s.charAt(5));
+       System.out.print(s.subSequence(tamaño, 9));
+       System.out.print(s.charAt(13));
+       System.out.print(s.charAt(18));
+       System.out.print(s.charAt(17));
+       System.out.print(s.charAt(16));
+       System.out.print(s.charAt(11));
+       System.out.println(s.charAt(12));
+       
+       
    }
    
-   public static String reconstruccionString2(String s){
-       return s.replace("[","");
-   }
-   
-   public static String reconstruccionString3(String s){
-       return s.replace(",","");
-   }
-   
-   public static String reconstruccionString4(String s){
-       return s.replace(" ","");
-   }
-     
     public static void main(String[] args) throws FileNotFoundException, IOException{        
         
-                leerDocumento(new BufferedReader(new FileReader("C:\\Users\\danbr\\Documents\\NetBeansProjects\\MatrizCaracol\\src\\matrizcaracol\\archivo.txt")), new ArrayList<String>(), new ArrayList<String>(), new char[25]);
+                leerDocumento(new BufferedReader(new FileReader("C:\\Users\\"
+                        + "danbr\\Documents\\NetBeansProjects\\MatrizCaracol\\"
+                        + "src\\matrizcaracol\\archivo.txt")), new ArrayList<>());
                 
                 }
         
